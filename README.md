@@ -1,5 +1,14 @@
 # Watersnake
 
+## Installation
+
+Currently, the only platform supported by the PyPI package is Linux
+with a CPU that supports AVX-512.
+
+```
+pip install watersnake
+```
+
 ## Usage
 
 ```
