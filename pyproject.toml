@@ -1,0 +1,30 @@
+[build-system]
+requires = [
+    "setuptools>=64.0",  # for PEP-660 (editable install) support
+    "wheel",
+    "Cython",
+    "auditwheel"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "watersnake"
+authors = [
+  { name = "Travis Wrightsman", email = "tw493@cornell.edu" },
+]
+description = "Minimal WFA2-lib wrapper in Python"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License"
+]
+dynamic = ["version"]
+
+[project.urls]
+"Homepage" = "https://github.com/twrightsman/watersnake"
+"Bug Tracker" = "https://github.com/twrightsman/watersnake/issues"
+
+[tool.setuptools.dynamic]
+version = {attr = "watersnake.__version__"}

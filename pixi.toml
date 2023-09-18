@@ -1,0 +1,29 @@
+[project]
+name = "watersnake"
+version = "0.1.0"
+description = "Minimal Python bindings to WFA2-lib"
+authors = ["Travis Wrightsman <tw493@cornell.edu>"]
+channels = ["conda-forge", "bioconda"]
+platforms = ["linux-64"]
+
+[tasks]
+format = { cmd = [ "black", "src/" ] }
+patch-conda-forge = { cmd = "cat patches/wfa2-lib | patch -p1 -d \"$CONDA_PREFIX/include/wfa2lib\"" }
+build-sdist = { cmd = [ "python", "-m", "build", "--sdist", "--no-isolation" ] }
+build-wheel = { cmd = [ "WATERSNAKE_LIBWFA2_INCLUDE_DIR=\"$CONDA_PREFIX/include/wfa2lib\"", "python", "-m", "build", "--wheel", "--no-isolation" ] }
+auditwheel-repair = { cmd = [ "auditwheel", "repair", "--wheel-dir", "dist/", "dist/*-linux*.whl" ], depends_on = [ "build-wheel" ] }
+auditwheel-show = { cmd = [ "auditwheel", "show", "dist/*-manylinux_*.whl" ], depends_on = [ "auditwheel-repair" ] }
+twine-check = { cmd = [ "twine", "check", "dist/*" ], depends_on = [ "build-sdist", "auditwheel-show" ] }
+clean = { cmd = [ "rm", "-rf", "build/", "dist/" ] }
+
+[dependencies]
+wfa2-lib = "~=2.3.3"
+python = ">=3.8,<4"
+pip = ""
+python-build = "=1"
+twine = "=4"
+auditwheel = "=5"
+cython = "=3"
+compilers = ""
+patchelf = "~=0.17.2"
+black = "=23"
