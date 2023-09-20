@@ -2124,19 +2124,19 @@ package:
   dependencies:
     libgcc-ng: '>=12'
     libstdcxx-ng: '>=12'
-  url: https://conda.anaconda.org/bioconda/linux-64/wfa2-lib-2.3.3-h4ac6f70_1.tar.bz2
+  url: https://conda.anaconda.org/bioconda/linux-64/wfa2-lib-2.3.3-h4ac6f70_2.tar.bz2
   hash:
-    md5: cfcbe7d5dfbcc470c041861c97aca3ad
-    sha256: e42c2d47701d6b57cefe906834405d5a68ed433a15f9b4f91dd6045b4a3ac1cc
+    md5: 04548777a2edb93fcc07c2df721371ee
+    sha256: 9c0226e6c753aab3f681ae8a6c86341a023f40f7d069d407b5ee6fe9717e7f42
   optional: false
   category: main
-  build: h4ac6f70_1
+  build: h4ac6f70_2
   arch: x86_64
   subdir: linux-64
-  build_number: 1
+  build_number: 2
   license: MIT
-  size: 119880
-  timestamp: 1692965088935
+  size: 120236
+  timestamp: 1695229142864
 - name: wheel
   version: 0.41.2
   manager: conda
