@@ -16,7 +16,7 @@ twine-check = { cmd = [ "twine", "check", "dist/*" ], depends_on = [ "build-sdis
 clean = { cmd = [ "rm", "-rf", "build/", "dist/" ] }
 
 [dependencies]
-wfa2-lib = "==2.3.3=h4ac6f70_2"
+wfa2-lib = "~=2.3.4"
 python = ">=3.8,<4"
 pip = ""
 python-build = "=1"
